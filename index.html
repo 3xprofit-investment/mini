@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>3X Profit | Login & Register</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#020617,#0f172a);
+    color:#fff;
+    min-height:100vh;
+}
+
+/* Header */
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px;
+}
+.header h1{
+    font-size:16px;
+    margin:0;
+}
+.support a{
+    color:#25D366;
+    font-size:22px;
+    text-decoration:none;
+}
+
+/* Card */
+.card{
+    max-width:360px;
+    margin:40px auto;
+    background:#020617;
+    border-radius:12px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+/* Logo */
+.logo{
+    text-align:center;
+    margin-bottom:20px;
+}
+.logo img{
+    width:120px;
+    padding:12px;
+}
+
+/* Tabs */
+.tabs{
+    display:flex;
+    margin-bottom:20px;
+}
+.tab{
+    flex:1;
+    text-align:center;
+    padding:10px;
+    cursor:pointer;
+    border-bottom:2px solid #334155;
+}
+.tab.active{
+    border-bottom:2px solid gold;
+    color:gold;
+}
+
+/* Inputs */
+input{
+    width:100%;
+    padding:12px;
+    margin-bottom:12px;
+    border:none;
+    border-radius:8px;
+    font-size:14px;
+}
+
+/* Button */
+button{
+    width:100%;
+    padding:12px;
+    background:gold;
+    color:#000;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* Hidden */
+.hidden{
+    display:none;
+}
+
+/* Footer note */
+.note{
+    text-align:center;
+    font-size:12px;
+    margin-top:15px;
+    color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Header -->
+<div class="header">
+    <h1>3X PROFIT</h1>
+    <div class="support">
+        <a href="https://wa.me/03175931560" target="_blank">🎧</a>
+    </div>
+</div>
+
+<!-- Card -->
+<div class="card">
+
+    <!-- Logo -->
+    <div class="logo">
+        <img src="images/logo.jpg" alt="3X Profit">
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+        <div class="tab active" onclick="showLogin()">Login</div>
+        <div class="tab" onclick="showRegister()">Register</div>
+    </div>
+
+    <!-- Login -->
+    <div id="loginBox">
+        <input type="text" placeholder="Name / Phone">
+        <input type="number" placeholder="Password">
+        <button onclick="location.href='home.html'">Login</button>
+    </div>
+
+    <!-- Register -->
+    <div id="registerBox" class="hidden">
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email">
+        <input type="number" placeholder="Phone Number">
+        <input type="number" placeholder="Password (min 5 digits)">
+        <input type="number" placeholder="Confirm Password">
+        <input type="text" value="REF12345" readonly>
+        <button onclick="location.href='home.html'">Register</button>
+    </div>
+
+    
+
+</div>
+
+<script>
+function showLogin(){
+    document.getElementById("loginBox").classList.remove("hidden");
+    document.getElementById("registerBox").classList.add("hidden");
+    document.querySelectorAll(".tab")[0].classList.add("active");
+    document.querySelectorAll(".tab")[1].classList.remove("active");
+}
+
+function showRegister(){
+    document.getElementById("registerBox").classList.remove("hidden");
+    document.getElementById("loginBox").classList.add("hidden");
+    document.querySelectorAll(".tab")[1].classList.add("active");
+    document.querySelectorAll(".tab")[0].classList.remove("active");
+}
+</script>
+
+</body>
+  </html>
